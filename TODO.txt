@@ -1,0 +1,11 @@
+1. Write Parsers
+--> Edid blob parser... just call descriptor parses
+--> Descriptor parsers
+
+2. Test with a hardcoded edid
+
+3. Compile library
+
+4. Create an edid cli tool to test lib
+
+5. Node js edid library that c++ binds to edid-lib

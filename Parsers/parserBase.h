@@ -6,22 +6,24 @@
 
 #pragma once
 
+#include <vector>
+
+#include <edidLib/ModelBase>;
+
 namespace edidLib {
 
-  class Parser {
+  class ParserBase {
     
+  /* A functor class */
+
   public:
   
-    Parser ( const std::vector<uint8_t>& iBlob ) :
-      mBlob(iBlob) 
-    {}
+    ParserBase () {}
+    virtual ~ParserBase() {}
 
-    // Returns an expected Model
-    //  Ex: EdidBaseParser returns an EdidBaseModel
-    // Validated with Schema and Context
-    //  Ex: EdidModesSchema + EdidBaseModel ==> ViewModesContext 
-    virtual SomeType parse () = 0;
-
+    virtual ModelBase operator() ( const std::vector<uint8_t>& iRaw ) { 
+      return ModelBase(); 
+    };
   };
 
 }
